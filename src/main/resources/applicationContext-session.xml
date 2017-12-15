@@ -12,10 +12,10 @@
 
 	<!-- <bean class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory"/> -->
 
-	<util:constant static-field="org.springframework.session.data.redis.config.ConfigureRedisAction.NO_OP"/>
-	
+	<!-- <util:constant static-field="org.springframework.session.data.redis.config.ConfigureRedisAction.NO_OP"/>
+ -->	
     <bean id="sessionRepository" class="org.springframework.session.data.redis.RedisOperationsSessionRepository">
-        <constructor-arg ref="jedisConnectionFactory" />
+        <constructor-arg ref="redisTemplate" />
     </bean>
   
     <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
