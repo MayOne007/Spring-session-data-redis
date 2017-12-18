@@ -28,8 +28,8 @@
     <url-pattern>/static/*</url-pattern>
   </servlet-mapping>
   
-  <!-- spring session的过滤器代理，为了用org.springframework.session.web.httpSessionRepositoryFilter
-  		这个东西的doFilterInternal创建session
+  <!-- spring session的过滤器代理：调用httpSessionRepositoryFilter这个类的doFilterInternal方法
+  		进而调用RedisOperationsSessionRepository的createSession方法创建session
    -->
   <filter>
     <filter-name>springSessionRepositoryFilter</filter-name>
