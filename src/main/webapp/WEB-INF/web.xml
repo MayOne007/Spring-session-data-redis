@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <!-- 启动spring -->        
   <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  <!-- 启动spring内置内省，防止内存泄露（应用关闭时JavaBeans内省的使用而引起的缓冲没有被垃圾回收，
+  		如果刷新整个缓冲则服务器其他项目的缓冲也会被清除） -->
   <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
   <context-param>
     <param-name>contextConfigLocation</param-name>
