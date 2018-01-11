@@ -8,6 +8,6 @@ import com.entity.Dict;
 import core.dao.BaseDaoImpl;
 
 @Repository
-public class DictDaoImpl extends BaseDaoImpl<Dict> implements DictDao {
+public class DictDaoImpl extends BaseDaoImpl<Dict, Integer> implements DictDao {
 
 }

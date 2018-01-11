@@ -13,7 +13,7 @@ import com.service.DictService;
 import core.service.BaseServiceImpl;
 
 @Service
-public class DictServiceImpl extends BaseServiceImpl<Dict> implements DictService {
+public class DictServiceImpl extends BaseServiceImpl<Dict, Integer> implements DictService {
 	
 	@Autowired
 	DictDao dictDao;

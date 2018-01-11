@@ -22,7 +22,7 @@
 
 	<context:annotation-config />
 	<context:component-scan
-		base-package="com.service,com.dao,core.service,core.dao,core.config" />
+		base-package="com.service,com.dao,core" />
 
 	<!-- 配置文件获取 -->
 	<bean id="propertyConfig"

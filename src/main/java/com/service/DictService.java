@@ -4,7 +4,7 @@ import com.entity.Dict;
 
 import core.service.BaseService;
 
-public interface DictService extends BaseService<Dict> {
+public interface DictService extends BaseService<Dict, Integer> {
 	
 	public void txOne();
 	

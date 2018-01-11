@@ -2,24 +2,27 @@ package core.service;
 
 import java.io.Serializable;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import core.dao.BaseDao;
 
 @Transactional
-public class BaseServiceImpl<E> implements BaseService<E>{
+public class BaseServiceImpl<E, PK extends Serializable> implements BaseService<E, PK>{
+	
+	public final Logger logger = Logger.getLogger(this.getClass());
 	
 	@Autowired
-	private BaseDao<E> baseDao;
+	private BaseDao<E, PK> baseDao;
 
 	@Override
-	public Serializable save(E e) {
+	public PK save(E e) {
 		return baseDao.save(e);
 	}
 
 	@Override
-	public void deleteById(Serializable id) {
+	public void deleteById(PK id) {
 		baseDao.deleteById(id);
 	}
 
@@ -29,12 +32,12 @@ public class BaseServiceImpl<E> implements BaseService<E>{
 	}	
 	
 	@Override
-	public E getById(Serializable id) {
+	public E getById(PK id) {
 		return baseDao.getById(id);
 	}
 
 	@Override
-	public E loadById(Serializable id) {
+	public E loadById(PK id) {
 		return baseDao.loadById(id);
 	}
 	

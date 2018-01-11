@@ -43,11 +43,13 @@ public class TestController {
 		cache.put("key", "value");
 		System.out.println(cache.get("key"));
 
-		Dict d = dictService.loadById(1);
-		List<Dict> dl = d.getChildDicts();
-		mv.addObject("o", GsonUtil.toJson(dl,"parentDict","childDicts"));
-		request.getSession().setAttribute("key", GsonUtil.toJson(dl,"parentDict","childDicts"));
-		mv.addObject("o", request.getSession().getAttribute("key"));
+		/*Dict d = dictService.loadById(1);
+		if(d.getKey()!=null) {
+			List<Dict> dl = d.getChildDicts();
+			mv.addObject("o", GsonUtil.toJson(dl,"parentDict","childDicts"));
+			request.getSession().setAttribute("key", GsonUtil.toJson(dl,"parentDict","childDicts"));
+			mv.addObject("o", request.getSession().getAttribute("key"));
+		}*/
 		return mv;
 	}
 	
