@@ -29,7 +29,7 @@ public class TestController {
 	@Autowired
 	private RedisUtil redisUtil;
 	
-	@Autowired
+	@Autowired 
 	private DictService dictService;
 	
 	@Autowired
