@@ -39,9 +39,9 @@ public class TestController {
 	@RequestMapping(value="index", method = RequestMethod.GET)
 	public Object index(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("/test");
-		Cache cache = cacheManager.getCache("user");
+		/*Cache cache = cacheManager.getCache("user");
 		cache.put("key", "value");
-		System.out.println(cache.get("key"));
+		System.out.println(cache.get("key"));*/
 
 		/*Dict d = dictService.loadById(1);
 		if(d.getKey()!=null) {
